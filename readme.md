@@ -9,4 +9,6 @@
 - 2019-07-13    finish index.blade.php layout
 - 2019-07-13    update auth module
 - 2019-07-13    add zh lang
+- 2019-07-14    finish register and login module
+- 2019-07-14    add admin index.blade.php, but not finish
 ##### （待完成）
