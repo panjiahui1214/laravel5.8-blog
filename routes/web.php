@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+Route::get('/admin', function () {
+    return view('admin.index');
+});

@@ -79,10 +79,6 @@
         </main>
     </div>
 
-    <footer class="fixed-bottom">
-        <div class="navbar-light bg-white shadow-lg text-center py-2">
-            © 皮卡丘潘
-        </div>
-    </footer>
+    @include('layouts.footer')
 </body>
 </html>
