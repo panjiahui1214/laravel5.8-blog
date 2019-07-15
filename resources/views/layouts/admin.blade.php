@@ -43,10 +43,10 @@
     </header>
 
     <div class="position-absolute middle-positon">
-        <div class="col-md-3 float-left h-100 border-right bg-white">
+        <div class="float-left h-100 sidebar-w bg-white shadow-sm">
             我是侧边栏
         </div>
-        <div class="col-md-9 h-100">
+        <div class="h-100 ml-236p bg-white shadow-sm">
             我是主要内容
         </div>
         <div class="clearfix"></div>
