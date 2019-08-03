@@ -1,3 +1,41 @@
-.middle-positon { top: 61px;left: 0;right: 0;bottom: 45px; }
-.sidebar-w { width: 230px; }
-.ml-236p { margin-left: 236px; }
+.l-0 {
+    left: 0!important;
+}
+.l-200px {
+    left: 200px!important;
+}
+.t-50px {
+    top: 50px!important;
+}
+.h-30px {
+    height: 30px!important;
+}
+.h-50px {
+    height: 50px!important;
+}
+.w-50px {
+    width: 50px!important;
+}
+.w-200px {
+    width: 200px!important;
+}
+.big-font {
+    font-size: 1.125rem!important;
+}
+.h-lh-30px {
+    height: 30px!important;
+    line-height: 30px!important;
+}
+.h-lh-50px {
+    height: 50px!important;
+    line-height: 50px!important;
+}
+.m-l-30px {
+    margin-left: 30px!important;
+}
+.p-l-15px {
+    padding-left: 15px;
+}
+.border-3-left {
+    border-left: 3px solid #3490dc!important;
+}

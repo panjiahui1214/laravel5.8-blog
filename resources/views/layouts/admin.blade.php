@@ -11,47 +11,24 @@
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 <body class="h-100">
-    <header>
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/admin') }}">
-                    {{ config('app.name', '皮卡丘潘的博客') }}
-                </a>
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav ml-auto">
-                        @guest
-                        @else
-                            <div class="mt-1 mr-2">
-                                {{ Auth::user()->name }}
-                            </div>
-                            <div>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    注销
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <header class=" h-50px bg-primary">
+        <div class="w-200px text-center big-font text-white h-lh-50px float-left">皮卡丘潘的博客</div>
+        <button class="bg-info h-50px p-0 w-50px border-0 navbar-light">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </header>
-
-    <div class="position-absolute middle-positon">
-        <div class="float-left h-100 sidebar-w bg-white shadow-sm">
-            我是侧边栏
+    <aside class="w-200px bg-white position-fixed t-50px l-0 h-100 shadow-lg">
+        <div class="list-group text-center">
+            <a href="" class="list-group-item active">会员管理</a>
+            <a href="" class="list-group-item">文章管理</a>
+            <a href="" class="list-group-item">系统管理</a>
         </div>
-        <div class="h-100 ml-236p bg-white shadow-sm">
-            我是主要内容
+    </aside>
+    <div class="position-fixed h-100 w-100 l-200px">
+        <div class="m-l-30px h-lh-30px">
+            <span class="p-l-15px border-3-left">会员管理</span>
         </div>
-        <div class="clearfix"></div>
+        <div class="m-l-30px h-100 w-100 bg-white shadow-lg border-all"></div>
     </div>
-
-    @include('layouts.footer')
 </body>
 </html>
