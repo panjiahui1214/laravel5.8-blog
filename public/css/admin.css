@@ -39,3 +39,10 @@
 .border-3-left {
     border-left: 3px solid #3490dc!important;
 }
+.btn-info-no-border {
+    background-color: #6cb2eb!important;
+    border: 0!important;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
