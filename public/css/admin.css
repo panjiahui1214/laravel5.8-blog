@@ -79,8 +79,10 @@
     margin-left: 30px;
 }
 .main_content .table_wrapper {
-    margin-top: 16px;
-    margin-left: 16px;
+    margin: 16px;
+}
+.main_content .table_wrapper table {
+    border-bottom: 1px solid rgba(0,0,0,.125);
 }
 .main_content .table_wrapper .table .th {
     background-color: #6cb2eb;
