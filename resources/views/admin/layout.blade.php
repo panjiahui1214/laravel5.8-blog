@@ -28,9 +28,9 @@
                 </div>
                 <div class="aside_menu_wrapper">
                     <ul class="list-unstyled">
-                        <a href="user"><li>会员管理</li></a>
-                        <a href="article"><li>文章管理</li></a>
-                        <a href="system"><li>系统管理</li></a>
+                        <a href="{{ route('admin_user') }}"><li>会员管理</li></a>
+                        <a href="{{ route('admin_article') }}"><li>文章管理</li></a>
+                        <a href="{{ route('admin_system') }}"><li>系统管理</li></a>
                     </ul>
                 </div>
             </div>

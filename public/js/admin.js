@@ -25,12 +25,10 @@
      * 根据点击侧边栏菜单控制活动菜单的显示样式
      */
     function aside_menu_active_or_not() {
-        var pathname = window.location.pathname;
-        var index = pathname.lastIndexOf('/');
-        var cur_url = pathname.substring(index + 1);
+        var pathname = window.location.href;
         $('.aside_menu_wrapper ul a').each(function () {
-            var menu_url = $(this).attr('href');
-            if (cur_url == menu_url) {
+            var href = $(this).attr('href');
+            if (pathname.indexOf(href) == 0) {
                 $(this).children('li').addClass('active');
             }
         });

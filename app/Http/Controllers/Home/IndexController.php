@@ -10,7 +10,6 @@ use App\Http\Controllers\Controller;
 class IndexController extends Controller
 {
     public function index() {
-
         return view('home.index', [
             'articles'  =>  Article::all(),
             'tags'      =>  Tag::all(),
