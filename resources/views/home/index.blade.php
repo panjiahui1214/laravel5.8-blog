@@ -3,22 +3,20 @@
 @section('content')
     <div class="row">
         <div class="col-md-9">
-            <div class="shadow bg-white px-5 py-4 mb-4">
-                <h2>我是文章标题</h2>
-                <h6>2019-01-01 01:01:01</h6>
-                <div>这是第一篇文章的简介</div>
-            </div>
-            <div class="shadow bg-white px-5 py-4 mb-4">
-                <h2>我是文章标题</h2>
-                <h6>2019-01-02 01:01:01</h6>
-                <div>这是第二篇文章的简介</div>
-            </div>
+            @foreach ($articles as $article)
+                <div class="shadow bg-white px-5 py-4 mb-4">
+                    <h2><a href="">{{ $article->title }}</a></h2>
+                    <h6>{{ $article->created_at }}</h6>
+                    <div>{{ $article->description }}</div>
+                </div>
+            @endforeach
         </div>
         <div class="col-md-3">
             <div class="shadow bg-white px-3 py-3 mb-4">
                 <ul class="list-unstyled mb-0">
-                    <li><a href="">php</a><span class="float-right">2篇</span></li>
-                    <li><a href="">java</a><span class="float-right">1篇</span></li>
+                    @foreach($tags as $tag)
+                        <li><a href="">{{ $tag->name }}</a><span class="float-right">1篇</span></li>
+                    @endforeach
                 </ul>
             </div>
             <div class="shadow bg-white px-3 py-3">

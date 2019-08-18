@@ -28,37 +28,21 @@
                 </div>
                 <div class="aside_menu_wrapper">
                     <ul class="list-unstyled">
-                        <a href=""><li class="active">会员管理</li></a>
-                        <a href=""><li>文章管理</li></a>
-                        <a href=""><li>系统管理</li></a>
+                        <a href="user"><li>会员管理</li></a>
+                        <a href="article"><li>文章管理</li></a>
+                        <a href="system"><li>系统管理</li></a>
                     </ul>
                 </div>
             </div>
             <div class="main_content_wrapper">
-                <div class="main_content_menu">
-                    <span>会员管理</span>
-                </div>
-                <div class="main_content shadow-lg">
-                    <div class="table_wrapper">
-                        <table class="table table-hover">
-                            <tr class="th">
-                                <th>ID</th>
-                                <th>用户名</th>
-                                <th>手机号码</th>
-                                </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>panjiahui</td>
-                                <td>13012345678</td>
-                                </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>panjiahui2</td>
-                                <td>13012345679</td>
-                            </tr>
-                        </table>
+                @section('content_wrapper')
+                    <div class="main_content_menu">
+                        <span>@yield('title')</span>
                     </div>
-                </div>
+                    <div class="main_content shadow-lg">
+                        @yield('content')
+                    </div>
+                @show
             </div>
         </div>
     </div>

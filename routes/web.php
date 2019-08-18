@@ -11,12 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home.index');
-});
+Route::get('/', 'Home\IndexController@index');
 
 Auth::routes();
 
-Route::get('/admin', function () {
-    return view('admin.index');
+Route::prefix('admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.index');
+    });
+    Route::get('user', function () {
+        return view('admin.user', ['users' => \App\User::all()]);
+    });
+    Route::get('article', function () {
+        return view('admin.article');
+    });
+    Route::get('system', function () {
+        return view('admin.system');
+    });
 });

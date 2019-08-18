@@ -1,5 +1,5 @@
-@extends('layouts.admin')
+@extends('admin.layout')
 
-@section('content')
-    我是主要内容
+@section('content_wrapper')
+
 @endsection
