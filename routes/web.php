@@ -33,12 +33,12 @@ Route::prefix('admin')->group(function () {
         })->name('admin_article');
 
         Route::get('add', function () {
-            return view('admin.article_input');
+            return view('admin.article_post', ['tags' => \App\Tag::all()]);
         })->name('admin_article_add');
         Route::post('add', 'Admin\ArticleController@save');
 
         Route::get('edit/{id}', function ($id) {
-            return view('admin.article_input', ['article' => \App\Article::find($id)]);
+            return view('admin.article_post', ['article' => \App\Article::find($id), 'tags' => \App\Tag::all()]);
         })->name('admin_article_edit');
         Route::post('edit/{id}', 'Admin\ArticleController@save');
 

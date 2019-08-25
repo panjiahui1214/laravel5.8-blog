@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Date;
 
 class TestUsersTableSeeder extends Seeder
 {
@@ -12,9 +13,10 @@ class TestUsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'test',
-            'email' => 'test@qq.com',
-            'password' => bcrypt('123456'),
+            'name'      =>  'test',
+            'email'     =>  'test@qq.com',
+            'password'  =>  bcrypt('123456'),
+            'created_at'    =>  Date::now()
         ]);
     }
 }

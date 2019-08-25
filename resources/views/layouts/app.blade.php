@@ -18,10 +18,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 </head>
 <body class="h-100">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', '皮卡丘潘的博客') }}
@@ -72,14 +73,14 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="main_content">
             <div class="col-md-10 m-auto">
                 @yield('content')
             </div>
         </main>
     </div>
 
-    <footer class="fixed-bottom position-absolute">
+    <footer class="fixed-bottom">
         <div class="navbar-light bg-white shadow-lg text-center py-2">
             © 皮卡丘潘
         </div>

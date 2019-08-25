@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTagsTable extends Migration
+class UpdateArticlesTextNullable extends Migration
 {
-    private $table = 'tags';
+    private $table = 'articles';
 
     /**
      * Run the migrations.
@@ -15,10 +15,8 @@ class CreateTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create($this->table, function (Blueprint $table) {
-            $table->tinyIncrements('id');
-            $table->string('name', 20)->unique();
-            $table->timestamps();
+        Schema::table($this->table, function (Blueprint $table) {
+            $table->text('text')->nullable()->change();
         });
     }
 
@@ -29,6 +27,8 @@ class CreateTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists($this->table);
+        Schema::table($this->table, function (Blueprint $table) {
+            $table->text('text')->nullable(false)->change();
+        });
     }
 }

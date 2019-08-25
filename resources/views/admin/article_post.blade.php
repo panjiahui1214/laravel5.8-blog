@@ -9,7 +9,8 @@
 @endsection
 
 @section('content')
-    <form action="{{ route('admin_article_add') }}" method="post">
+    <form method="post">
+        @csrf
         <table>
             <tr>
                 <td class="text-right width-25 padding-r15p">标题：</td>
@@ -23,13 +24,27 @@
             </tr>
             <tr>
                 <td class="text-right padding-r15p">描述：</td>
-                <td><textarea name="description" cols="60" rows="3" maxlength="255" placeholder="请输入小于255个字符"
-                              value="{{ old('description') ?: (isset($article) ? $article->description : '') }}"></textarea></td>
+                <td>
+                    <textarea name="description" cols="60" rows="3" maxlength="255" placeholder="请输入小于255个字符">
+                        {{ old('description') ?: (isset($article) ? $article->description : '') }}
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-right padding-r15p">标签：</td>
+                <td>
+                    @foreach($tags as $tag)
+                        <input type="checkbox" name="article_tag">{{ $tag->name }}
+                    @endforeach
+                </td>
             </tr>
             <tr>
                 <td class="text-right padding-r15p">内容：</td>
-                <td><textarea name="text" cols="60" rows="10"
-                              value="{{ old('text') ?: (isset($article) ? $article->text : '') }}" required></textarea></td>
+                <td>
+                    <textarea name="text" cols="60" rows="10">
+                        {{ old('text') ?: (isset($article) ? $article->text : '') }}
+                    </textarea>
+                </td>
             </tr>
             <tr>
                 <td></td>

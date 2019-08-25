@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Date;
 
 class TestTagsTableSeeder extends Seeder
 {
@@ -13,10 +14,12 @@ class TestTagsTableSeeder extends Seeder
     {
         DB::table('tags')->insert([
             [
-                'name' => 'php'
+                'name'  =>  'php',
+                'created_at'    =>  Date::now()
             ],
             [
-                'name' => 'java'
+                'name'  =>  'java',
+                'created_at'    =>  Date::now()
             ]
         ]);
     }

@@ -22,6 +22,6 @@ class ArticleController extends Controller
         $article->text = $request->text;
         $article->save();
 
-        return redirect('admin_article');
+        return redirect()->route('admin_article');
     }
 }
