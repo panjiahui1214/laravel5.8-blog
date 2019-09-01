@@ -13,7 +13,7 @@
 
 Route::get('/', 'Home\IndexController@index');
 
-Auth::routes();
+//Auth::routes();
 
 // 后台
 Route::prefix('admin')->group(function () {
@@ -22,9 +22,9 @@ Route::prefix('admin')->group(function () {
     });
 
     // 会员管理
-    Route::get('user', function () {
-        return view('admin.user', ['users' => \App\User::all()]);
-    })->name('admin_user');
+//    Route::get('user', function () {
+//        return view('admin.user', ['users' => \App\User::all()]);
+//    })->name('admin_user');
 
     // 文章管理
     Route::prefix('article')->group(function () {
