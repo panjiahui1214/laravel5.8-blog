@@ -30,7 +30,8 @@
                     <ul class="list-unstyled">
                         {{--<a href="{{ route('admin_user') }}"><li>会员管理</li></a>--}}
                         <a href="{{ route('admin_article') }}"><li>文章管理</li></a>
-                        <a href="{{ route('admin_system') }}"><li>系统管理</li></a>
+                        <a href="{{ route('admin_tag') }}"><li>标签管理</li></a>
+                        {{--<a href="{{ route('admin_system') }}"><li>系统管理</li></a>--}}
                     </ul>
                 </div>
             </div>

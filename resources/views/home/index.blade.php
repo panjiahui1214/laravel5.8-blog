@@ -12,25 +12,26 @@
                     </div>
                     <div class="margin-t8p">标签：
                         @foreach($article->tags as $tag)
-                            <a href="">{{ $tag->name }}</a>,
+                            <a href="{{ route('index_tag', ['tag' => $tag->name]) }}">{{ $tag->name }}</a>,
                         @endforeach
                     </div>
                 </div>
             @endforeach
+
+            {{ $articles->links() }}
         </div>
         <div class="col-md-3">
             <div class="shadow bg-white px-3 py-3 mb-4">
                 <ul class="list-unstyled mb-0">
                     @foreach($tags as $tag)
-                        <li><a href="">{{ $tag->name }}</a><span class="float-right">{{ $tag->articles->count() }}篇</span></li>
+                        <li><a href="{{ route('index_tag', ['tag' => $tag->name]) }}">{{ $tag->name }}</a><span class="float-right">{{ $tag->articles->count() }}篇</span></li>
                     @endforeach
-                    <li><a href="">无</a><span class="float-right">{{ $tag0_cnt }}篇</span></li>
                 </ul>
             </div>
             <div class="shadow bg-white px-3 py-3">
                 <ul class="list-unstyled mb-0">
                     @foreach($months as $month)
-                        <li><a href="">{{ $month->month }}</a><span class="float-right">{{ $month->count }}篇</span></li>
+                        <li><a href="{{ route('index_month', ['month' => $month->month]) }}">{{ $month->month }}</a><span class="float-right">{{ $month->count }}篇</span></li>
                     @endforeach
                 </ul>
             </div>

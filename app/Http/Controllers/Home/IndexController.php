@@ -12,16 +12,30 @@ use Illuminate\Support\Facades\DB;
 class IndexController extends Controller
 {
     public function index() {
+        $articles = Article::paginate(6);
+        return view('home.index', $this->common($articles));
+    }
+
+    public function tag($tag) {
+        $articles = Tag::where('name', $tag)->first()->articles()->paginate(6);
+        return view('home.index', $this->common($articles));
+    }
+
+    public function month($month) {
+        $articles = Article::whereRaw('date_format(created_at, \'%Y-%m\') = ?', $month)->paginate(6);
+        return view('home.index', $this->common($articles));
+    }
+
+    public function common($articles) {
         $months = DB::table('articles')
             ->selectRaw('date_format(created_at, \'%Y-%m\') as month, count(*) as count')
             ->groupBy('month')
             ->get();
 
-        return view('home.index', [
-            'articles'  =>  Article::all(),
+        return [
+            'articles'  =>  $articles,
             'tags'      =>  Tag::all(),
-            'tag0_cnt'  =>  ArticleTag::where('tag_id', 0)->count(),
             'months'    =>  $months
-        ]);
+        ];
     }
 }

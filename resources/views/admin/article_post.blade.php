@@ -11,7 +11,7 @@
 @section('content')
     <form method="post">
         @csrf
-        <table>
+        <table class="w-100">
             <tr>
                 <td class="text-right width-25 padding-r15p">标题：</td>
                 <td><input type="text" name="title" maxlength="50" placeholder="请输入小于50个字符"
@@ -25,30 +25,28 @@
             <tr>
                 <td class="text-right padding-r15p">描述：</td>
                 <td>
-                    <textarea name="description" cols="60" rows="3" maxlength="255" placeholder="请输入小于255个字符">
-                        {{ old('description') ?: (isset($article) ? $article->description : '') }}
-                    </textarea>
+                    <textarea name="description" cols="60" rows="3" maxlength="255" placeholder="请输入小于255个字符">{{ old('description') ?: (isset($article) ? $article->description : '') }}</textarea>
                 </td>
             </tr>
             <tr>
                 <td class="text-right padding-r15p">标签：</td>
                 <td>
                     @foreach($tags as $tag)
-                        <input type="checkbox" name="article_tag">{{ $tag->name }}
+                        <input id="tag{{ $tag->id }}" type="checkbox" name="article_tags[]" value="{{ $tag->id }}"
+                            @if(isset($article_tags) && in_array($tag->id, $article_tags)) checked @endif>
+                        <label for="tag{{ $tag->id }}">{{ $tag->name }}</label>
                     @endforeach
                 </td>
             </tr>
             <tr>
                 <td class="text-right padding-r15p">内容：</td>
                 <td>
-                    <textarea name="text" cols="60" rows="10">
-                        {{ old('text') ?: (isset($article) ? $article->text : '') }}
-                    </textarea>
+                    <textarea name="text" cols="60" rows="10">{{ old('text') ?: (isset($article) ? $article->text : '') }}</textarea>
                 </td>
             </tr>
             <tr>
                 <td></td>
-                <td class="text-center height-50p">
+                <td class="height-50p">
                     <button type="submit" class="margin-r15p">提交</button>
                     <button type="reset">重置</button>
                 </td>

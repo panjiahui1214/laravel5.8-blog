@@ -19,8 +19,8 @@
                     <td>{{ $article->title }}</td>
                     <td>{{ $article->created_at }}</td>
                     <td>{{ $article->updated_at }}</td>
-                    <td><a href="{{ route('admin_article_edit', ['id'=>$article->id]) }}">编辑</a>
-                        | <a href="{{ route('admin_article_delete', ['id'=>$article->id]) }}"
+                    <td><a href="{{ route('admin_article_edit', ['id' => $article->id]) }}">编辑</a>
+                        | <a href="{{ route('admin_article_delete', ['id' => $article->id]) }}"
                              onclick="if(!confirm('确定要删除吗？')) return false;">删除</a></td>
                 </tr>
             @endforeach
