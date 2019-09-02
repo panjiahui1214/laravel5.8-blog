@@ -26,4 +26,5 @@
             @endforeach
         </table>
     </div>
+    <div class="float-right">{{ $articles->links() }}</div>
 @endsection

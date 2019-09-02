@@ -13,7 +13,7 @@ class ArticleController extends Controller
     private $route_article = 'admin.article';
 
     public function index() {
-        return view('admin.article', ['articles' => Article::all()]);
+        return view('admin.article', ['articles' => Article::paginate(7)]);
     }
 
     public function addView() {

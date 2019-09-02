@@ -11,7 +11,7 @@ class TagController extends Controller
     private $route_tag = 'admin.tag';
 
     public function index() {
-        return view('admin.tag', ['tags' => Tag::all()]);
+        return view('admin.tag', ['tags' => Tag::paginate(7)]);
     }
 
     public function addView() {
