@@ -11,3 +11,12 @@
 .font-s12p {
     font-size: 12px!important;
 }
+
+.form-paging ul{
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-paging ul li {
+    float: left;
+}

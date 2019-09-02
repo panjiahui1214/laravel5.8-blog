@@ -17,8 +17,7 @@
                     </div>
                 </div>
             @endforeach
-
-            {{ $articles->links() }}
+            <div class="form-paging">{{ $articles->links() }}</div>
         </div>
         <div class="col-md-3">
             <div class="shadow bg-white px-3 py-3 mb-4">
