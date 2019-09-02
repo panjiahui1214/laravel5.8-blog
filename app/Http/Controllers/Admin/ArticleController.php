@@ -10,6 +10,8 @@ use App\Http\Controllers\Controller;
 
 class ArticleController extends Controller
 {
+    private $route_article = 'admin.article';
+
     public function index() {
         return view('admin.article', ['articles' => Article::all()]);
     }
@@ -24,7 +26,7 @@ class ArticleController extends Controller
             $article->tags()->attach($request->article_tags);
         });
 
-        return redirect()->route('admin_article');
+        return redirect()->route($this->route_article);
     }
 
     public function editView($id) {
@@ -44,11 +46,10 @@ class ArticleController extends Controller
         DB::transaction(function () use ($request, $id) {
             $article = Article::find($id);
             $this->save($request, $article);
-            $article->tags()->detach();
-            $article->tags()->attach($request->article_tags);
+            $article->tags()->sync($request->article_tags);
         });
 
-        return redirect()->route('admin_article');
+        return redirect()->route($this->route_article);
     }
 
     public function save($request, $article) {
@@ -61,6 +62,6 @@ class ArticleController extends Controller
 
     public function delete($id) {
         Article::destroy($id);
-        return redirect()->route('admin_article');
+        return redirect()->route($this->route_article);
     }
 }

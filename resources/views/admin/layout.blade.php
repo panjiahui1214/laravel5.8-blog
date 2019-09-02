@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>皮卡丘潘的博客后台管理系统</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
@@ -28,10 +27,10 @@
                 </div>
                 <div class="aside_menu_wrapper">
                     <ul class="list-unstyled">
-                        {{--<a href="{{ route('admin_user') }}"><li>会员管理</li></a>--}}
-                        <a href="{{ route('admin_article') }}"><li>文章管理</li></a>
-                        <a href="{{ route('admin_tag') }}"><li>标签管理</li></a>
-                        {{--<a href="{{ route('admin_system') }}"><li>系统管理</li></a>--}}
+                        {{--<a href="{{ route('admin.user') }}"><li>会员管理</li></a>--}}
+                        <a href="{{ route('admin.article') }}"><li>文章管理</li></a>
+                        <a href="{{ route('admin.tag') }}"><li>标签管理</li></a>
+                        {{--<a href="{{ route('admin.system') }}"><li>系统管理</li></a>--}}
                     </ul>
                 </div>
             </div>

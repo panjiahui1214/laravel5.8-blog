@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 
 class TagController extends Controller
 {
+    private $route_tag = 'admin.tag';
+
     public function index() {
         return view('admin.tag', ['tags' => Tag::all()]);
     }
@@ -20,7 +22,7 @@ class TagController extends Controller
         $tag->name = $request->name;
         $tag->save();
 
-        return redirect()->route('admin_tag');
+        return redirect()->route($this->route_tag);
     }
 
     public function editView($id) {
@@ -32,11 +34,11 @@ class TagController extends Controller
         $tag->name = $request->name;
         $tag->save();
 
-        return redirect()->route('admin_tag');
+        return redirect()->route($this->route_tag);
     }
 
     public function delete($id) {
         Tag::destroy($id);
-        return redirect()->route('admin_tag');
+        return redirect()->route($this->route_tag);
     }
 }

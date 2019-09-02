@@ -3,7 +3,7 @@
 @section('title', '标签管理')
 
 @section('content')
-    <div><a href="{{ route('admin_tag_add') }}"><button>添加</button></a></div>
+    <div><a href="{{ route('admin.tag.add') }}"><button>添加</button></a></div>
     <div class="table_wrapper">
         <table class="table table-hover text-center">
             <tr class="th">
@@ -19,8 +19,8 @@
                     <td>{{ $tag->name }}</td>
                     <td>{{ $tag->created_at }}</td>
                     <td>{{ $tag->updated_at }}</td>
-                    <td><a href="{{ route('admin_tag_edit', ['id' => $tag->id]) }}">编辑</a>
-                        | <a href="{{ route('admin_tag_delete', ['id' => $tag->id]) }}"
+                    <td><a href="{{ route('admin.tag.edit', [ $tag->id ]) }}">编辑</a>
+                        | <a href="{{ route('admin.tag.delete', [ $tag->id ]) }}"
                              onclick="if(!confirm('确定要删除吗？')) return false;">删除</a></td>
                 </tr>
             @endforeach
