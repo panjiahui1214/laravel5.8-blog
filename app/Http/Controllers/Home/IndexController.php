@@ -11,19 +11,21 @@ use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
+    private $route_index = 'home.index';
+
     public function index() {
         $articles = Article::paginate(6);
-        return view('home.index', $this->common($articles));
+        return view($this->route_index, $this->common($articles));
     }
 
     public function tag($tag) {
         $articles = Tag::where('name', $tag)->first()->articles()->paginate(6);
-        return view('home.index', $this->common($articles));
+        return view($this->route_index, $this->common($articles));
     }
 
     public function month($month) {
         $articles = Article::whereRaw('date_format(created_at, \'%Y-%m\') = ?', $month)->paginate(6);
-        return view('home.index', $this->common($articles));
+        return view($this->route_index, $this->common($articles));
     }
 
     public function common($articles) {
