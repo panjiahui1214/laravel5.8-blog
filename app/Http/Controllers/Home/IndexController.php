@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 class IndexController extends Controller
 {
     private $route_index = 'home.index';
+    private $route_article = 'home.article';
 
     public function index() {
         $articles = Article::paginate(6);
@@ -28,7 +29,12 @@ class IndexController extends Controller
         return view($this->route_index, $this->common($articles));
     }
 
-    public function common($articles) {
+    public function article($id) {
+        $articles = Article::find($id);
+        return view($this->route_article, $this->common($articles));
+    }
+
+    protected function common($articles) {
         $months = DB::table('articles')
             ->selectRaw('date_format(created_at, \'%Y-%m\') as month, count(*) as count')
             ->groupBy('month')
@@ -40,4 +46,5 @@ class IndexController extends Controller
             'months'    =>  $months
         ];
     }
+
 }

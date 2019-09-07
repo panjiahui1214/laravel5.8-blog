@@ -15,6 +15,7 @@
 Route::get('/', 'Home\IndexController@index')->name('index');
 Route::get('tag/{tag}', 'Home\IndexController@tag')->name('index.tag');
 Route::get('month/{month}', 'Home\IndexController@month')->name('index.month');
+Route::get('article/{id}', 'Home\IndexController@article')->name('index.article');
 
 //Auth::routes();
 
